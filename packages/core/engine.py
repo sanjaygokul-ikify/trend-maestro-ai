@@ -48,6 +48,12 @@ class Engine:
         for agent in self.agents:
             agent.stop()
 
+    def get_agents(self) -> List[Agent]:
+        return self.agents
+
+    def get_tasks(self) -> List[Task]:
+        return self.tasks
+
 
 class Agent:
     def __init__(self, id: str):

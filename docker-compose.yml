@@ -1,0 +1,17 @@
+# Docker Compose file for Maestro AI
+
+version: '3'
+services:
+mmaestro-ai:
+	build: .
+	ports:
+	- "8000:8000"
+	volumes:
+	- .:/app
+	env_file:
+	- env
+
+redis:
+	image: redis:latest
+	ports:
+	- "6379:6379"

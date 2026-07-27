@@ -1,0 +1,25 @@
+# Default configuration for Maestro AI
+
+agent:
+	enabled: true
+	register: true
+	assign: true
+	report: true
+
+registry:
+	enabled: true
+	assign: true
+	update: true
+
+knowledge_graph:
+	enabled: true
+	update: true
+	query: true
+
+inference_engine:
+	enabled: true
+	decision: true
+
+actuator:
+	enabled: true
+	action: true

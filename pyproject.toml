@@ -1,0 +1,12 @@
+[tool.poetry]
+name = "maestro-ai"
+version = "1.0.0"
+description = "Distributed multi-agent orchestration framework"
+authors = ["Maestro AI <maestro-ai@example.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+pip = "^21.2.4"

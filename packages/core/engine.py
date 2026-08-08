@@ -5,16 +5,16 @@ from .exceptions import EngineException
 
 
 class Engine:
-    def __init__(self, agents: List[Agent], tasks: List[Task]):
+    def __init__(self, agents: List['Agent'], tasks: List['Task']):
         self.agents = agents
         self.tasks = tasks
         self.logger = logging.getLogger(__name__)
 
-    def register_agent(self, agent: Agent):
+    def register_agent(self, agent: 'Agent'):
         self.agents.append(agent)
         self.logger.info(f"Agent {agent.id} registered")
 
-    def assign_task(self, task: Task, agent: Agent):
+    def assign_task(self, task: 'Task', agent: 'Agent'):
         if agent in self.agents:
             agent.tasks.append(task)
             self.tasks.append(task)
@@ -23,7 +23,7 @@ class Engine:
             self.logger.error(f"Agent {agent.id} not found")
             raise EngineException(f"Agent {agent.id} not found")
 
-    def update_task_status(self, task: Task, status: str):
+    def update_task_status(self, task: 'Task', status: str):
         for agent in self.agents:
             if task in agent.tasks:
                 task.status = status
@@ -32,10 +32,10 @@ class Engine:
         self.logger.error(f"Task {task.id} not found")
         raise EngineException(f"Task {task.id} not found")
 
-    def get_agent_status(self, agent: Agent):
+    def get_agent_status(self, agent: 'Agent'):
         return agent.status
 
-    def get_task_status(self, task: Task):
+    def get_task_status(self, task: 'Task'):
         return task.status
 
     def start(self):
@@ -48,10 +48,10 @@ class Engine:
         for agent in self.agents:
             agent.stop()
 
-    def get_agents(self) -> List[Agent]:
+    def get_agents(self) -> List['Agent']:
         return self.agents
 
-    def get_tasks(self) -> List[Task]:
+    def get_tasks(self) -> List['Task']:
         return self.tasks
 
 
